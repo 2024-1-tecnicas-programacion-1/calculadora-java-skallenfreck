@@ -8,32 +8,36 @@ import java.util.Scanner;
  */
 public class Calculadora {
 
-    public static double calcular(int numero1, int numero2, char operacion) {
+    public static double calcular(int numero1, int numero2, String operacion) {
         double respuesta = 0;
         switch (operacion) {
-            case '+':
+            case "+":
                 // Operación suma:
                 respuesta = numero1 + numero2;
                 break;
-            case '-':
+            case "-":
                 // Operación resta:
                 respuesta = numero1 - numero2;
                 break;
-            case '*':
+            case "*":
                 // Operación multiplicación:
                 respuesta = numero1 * numero2;
                 break;
-            case '/':
+            case "/":
                 // Operación división:
                 respuesta = (double) numero1 / numero2;
                 break;
-            case '^':
+            case "^":
                 //Operacíon potencia:
                 respuesta = Math.pow(numero1, numero2);
                 break;
-            case '%':
+            case "%":
                 //operacion modulo:
-                respuesta= numero1%numero2;
+                respuesta = numero1 % numero2;
+                break;
+            case "Raiz":
+                //Operación raiz
+                respuesta = (double) numero1*1/numero2;
                 break;
             default:
                 throw new IllegalArgumentException("Operación inválida.");
@@ -51,8 +55,8 @@ public class Calculadora {
         int numero2 = lector.nextInt();
 
         // Lectura de la operación a realizar
-        System.out.println("Ingrese la operación (+, -, *, /, ^,%)");
-        char operacion = lector.next().charAt(0);
+        System.out.println("Ingrese la operación (+, -, *, /, ^, %, Raiz)");
+        String operacion = lector.nextLine();
 
         double respuesta = calcular(numero1, numero2, operacion);
         System.out.println("La respuesta es " + respuesta);

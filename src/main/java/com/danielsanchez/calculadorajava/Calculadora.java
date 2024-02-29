@@ -37,7 +37,7 @@ public class Calculadora {
                 break;
             case "Raiz":
                 //Operación raiz
-                respuesta = (double) numero1*1/numero2;
+                respuesta = Math.pow(numero1,(double)1/numero2);
                 break;
             default:
                 throw new IllegalArgumentException("Operación inválida.");

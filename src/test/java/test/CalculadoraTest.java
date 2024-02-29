@@ -59,7 +59,7 @@ public class CalculadoraTest {
     @Test
     public void testRaiz(){
         double valorEsperado= 5;
-        double valorActual= Calculadora.calcular(25, 5, "Raiz");
+        double valorActual= Calculadora.calcular(25, 2, "Raiz");
         assertEquals(valorEsperado, valorActual);
     
     }
